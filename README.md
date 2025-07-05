@@ -1,83 +1,25 @@
 # CSC361-WebTester.py (HTTP and HTTPS Analyzer)
 
+## Overview
 
-Overview:
-WebTester is a Python program designed to connect to a web server, analyze HTTP/HTTPS responses, and collect key information such as supported protocols that is if the HTTP/2 version is supported or not, list of cookies, and the security status that is (authorized or not) of the server.
-Information such as:
-Supported protocol versions (e.g., HTTP/2).
-A list of cookies set by the server.
-The security status of the server (whether it's password-protected or not).
+**WebTester** is a Python program designed to connect to a web server, analyze HTTP/HTTPS responses, and collect key information such as:
 
+- Supported protocol versions (e.g., HTTP/2 support).
+- List of cookies set by the server.
+- Security status (i.e., whether the server is password-protected).
 
-How to Run:
-Step1: Unzip the submitted folder 
-Step2: Open the terminal and navigate to the directory where the WebTester.py file is located.
-Step3: Run the command python3 WebTester.py <url>
-Replace the <url> with any valid url for example, www.uvic.ca
+This tool is useful for understanding how websites respond to requests and what security/privacy-related headers or features they implement.
 
-Input examples:
+---
 
-Desired results examples:
-python3 WebTester.py www.uvic.ca
-python3 WebTester.py uvic.ca
-python3 WebTester.py https://www.uvic.ca
-python3 WebTester.py www.youtube.com
-python3 WebTester.py www.netflix.com
+## How to Run
 
-Error Example (Invalid URL)
-python3 WebTester.py www.
-python3 WebTester.py 
+1. Unzip the submitted folder.
+2. Open a terminal and navigate to the directory containing `WebTester.py`.
+3. Run the following command:
 
-Example for an Authorized URL (401 Unauthorized):
-python3 WebTester.py https://docs.engr.uvic.ca/docs/
+```bash
+python3 WebTester.py <url>
 
 
-Output example:
-desktop % python3 webtester.py www.uvic.ca
----Request begin---
-GET www.uvic.ca HTTP/1.1
-Host: www.uvic.ca
-Connection: Keep-Alive
-
----Request end---
-
-HTTP request sent, awaiting response...
-
-302
-https://www.uvic.ca/
-
-200
----Response Header---
-HTTP/1.1 200 OK
-Date: Fri, 27 Sep 2024 22:21:12 GMT
-Expires: Thu, 19 Nov 1981 08:52:00 GMT
-Cache-Control: no-store, no-cache, must-revalidate
-Pragma: no-cache
-Set-Cookie: PHPSESSID=7o9v0mjc93cvo7fgleshq2l2nr; path=/; secure; HttpOnly; SameSite=Lax
-Set-Cookie: uvic_bar=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/; domain=.uvic.ca; secure; HttpOnly
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-Referrer-Policy: strict-origin-when-cross-origin
-Vary: Accept-Encoding,User-Agent
-Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
-Connection: close
-Content-Type: text/html; charset=UTF-8
-Set-Cookie: www_def=!Tk720JzoXGFgy192WoCbqs3+3m8im6nuFZkYzVd8QS8Ohy7qG7efCDDVGVHbrPpiijNPYNHUOCkQvEU=; path=/; Httponly; Secure
-Strict-Transport-Security: max-age=16070400
-Set-Cookie: TS018b3cbd=0183e0753443eefdc62258187626db7661ffa7a78acd98768f713e085b8cff9a59ca17d19cbff447544971c76f7e82f42cc8cda17c291a9a9e6699822b40257cec9363bafde40a1a10aefecb8b1389a5d6ece51b18; Path=/; Secure; HTTPOnly
-Set-Cookie: TS0165a077=0183e0753487e943502f73f16988b6b47daa5aaf4ecd98768f713e085b8cff9a59ca17d19c622923a1c3bb6424febe1252802b9beed6a9ae2c53d7a8f4c4d2ade0ee255378; path=/; domain=.uvic.ca; HTTPonly; Secure
-
-website: www.uvic.ca
-1. Supports http2: no
-2. List of Cookies:
-cookie name: PHPSESSID
-cookie name: uvic_bar, expires time: Thu, 01-Jan-1970 00:00:01 GMT, domain name: .uvic.ca
-cookie name: www_def
-cookie name: TS018b3cbd
-cookie name: TS0165a077, domain name: .uvic.ca
-3. Password-protected: no
-
-
-
-Thanks
 
